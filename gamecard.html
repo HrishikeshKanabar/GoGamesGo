@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Go Games GO - ${gamename}</title>
+<link rel="icon" type="image/png" href="./img/game-logo.jpg"/>
+<link rel="stylesheet" href="./assets/css/reset.css">
+<link rel="stylesheet" href="./assets/css/gamecardcss.css">
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+<div class="container">
+
+<div class="col-md-12">
+    <h3>`${gamename}` REVIEWS</h3>
+    <hr>
+</div>
+                <!--game word description-->
+<div class="description col-md-3 col-sm-3 col-xs-12 rating-part-left text-center">
+     <h3>Name: `${game name}`</h3>
+     <p>Game id: `${game id}`</p>
+     <p>Realease year: `${release year}`</p>
+     <p>Genra: `${game genra}`</p>
+     <p>Console type: `${console type}`</p>
+</div>
+
+<div>
+    <div class="col-md-3 col-sm-3 col-xs-12 rating-part-left text-center">
+        <h1>${num}</h1>
+        <i class="fa fa-star" aria-hidden="true"></i>
+        <i class="fa fa-star" aria-hidden="true"></i>
+        <i class="fa fa-star" aria-hidden="true"></i>
+        <i class="fa fa-star" aria-hidden="true"></i>
+        <i class="fa fa-star" aria-hidden="true"></i>
+        <p>Based on ${totalNumber} reviews</p>
+    </div>
+    </div>
+
+    <div class="col-md-3 col-sm-3 col-xs-12 rating-part-right">
+            <div>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <span>70%</span><!--number of 5 starts/total review-->
+            </div>
+            <div>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star-o" aria-hidden="true"></i>
+                <span>20%</span><!--number of 4 starts/total review-->
+            </div>
+            <div>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star-o" aria-hidden="true"></i>
+                <i class="fa fa-star-o" aria-hidden="true"></i>
+                <span>8%</span><!--number of 3 starts/total review-->
+            </div>
+            <div>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star-o" aria-hidden="true"></i>
+                <i class="fa fa-star-o" aria-hidden="true"></i>
+                <i class="fa fa-star-o" aria-hidden="true"></i>
+                <span>4%</span><!--number of 2 starts/total review-->
+            </div>
+            <div>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star-o" aria-hidden="true"></i>
+                <i class="fa fa-star-o" aria-hidden="true"></i>
+                <i class="fa fa-star-o" aria-hidden="true"></i>
+                <i class="fa fa-star-o" aria-hidden="true"></i>
+                <span>0%</span><!--number of 0 starts/total review-->
+            </div>
+        </div>
+        <!--game picture-->
+        <div class="gamepic">
+        <img src="./img/sample.jpg" alt="${game name}">
+    </div>
+
+
+
+
+    <div class="col-md-12 col-sm-12 col-xs-12 review" >
+        <hr>
+        <h3 class="reviewtitle">Reviews</h3>
+        <hr>
+        <button class="addreview">Add a Review</button>
+    </div>
+
+
+    <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="product-rating-panel-left">
+                    <!-- date name review-->
+                    <div class="col-md-8 col-sm-8 col-xs-12">
+                        <span>${username}</span><br>
+                        <p>10 days ago</p>
+                    </div>
+            </div>
+            <div class="product-rating-panel-right">
+                    <div>
+
+                        <!--review stars row-->
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star-o" aria-hidden="true"></i>
+                    </div>
+                    <div>
+                        <p>some review typed here 
+                        </p>
+                    </div>
+            </div>
+    </div>
+</div>
+
+    
+</body>
+</html>

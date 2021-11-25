@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Go Games GO</title>
+    <link rel="icon" type="image/png" href="./img/game-logo.jpg"/>
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/miancss.css">
+</head>
+<body>
+  <div id="bg">
+  
+    <!--for nevigate bar-->
+    <nav class="navigate" id="navigate">
+      
+          <ul class="nav-main">
+            <li class="active"><a href="#">Go games GO</a></li>
+          </ul>
+
+
+          <ul class="nav-login">
+            <li><a href="./login.html">Login</a></li>
+            <li><a class="joinbtn" href="./signup.html"> Join now</a></li>
+            
+            
+          </ul>
+          </div>
+          </nav>
+
+      <!--for search bar-->
+      <button class="searchformbtn" onclick="openSearechForm()">Game Search</button>
+      <div class="searchform" id="searchform">
+        <label for="Search">Please enter keywords:
+        </label>   
+
+        <input class="gamesearch" type="text",placeholder="game name,realase year, console type, game type" maxlength="15">
+        <br/>
+        <p> eg: game name, release year, console type, or game type</p>
+        <br/>
+        <button  class="btn" type="submit">Search</button>  
+        <button class="btn" type="submit" onclick="closeSearchForm()">Quit</button>
+         
+          </div>
+
+
+
+    <!--for add bar-->
+  
+<button class="addformbtn" onclick="openAddForm()">Add a Game</button>
+<div class="addform" id="addform">
+<form>
+    <label for="gamename">Game name:</label>
+    <br/>
+  <input type="text" id="gamename" name="gamename">
+  <br/>
+  
+  <label for="releaseyear">Release year:</label>
+  <br/>
+  <input type="text" id="releaseyear" name=releaseyear>
+  <br/>
+
+  <label for="gametype"> Game type:</label>
+  <br/>
+  <input type="text" id="gametype" name="gametype">
+  <br/>
+
+  <label for="consoletype"> Console type:</label>
+  <br/>
+  <input type="text" id="consoletype" name="consoletype">
+  <br/>
+
+  <label for="description"> Description:</label>
+  <br/>
+  <textarea id="description" name="description" rows="4" cols="20"></textarea>
+  <br/>
+<!--need upload pic part later-->
+    <input type="file" id="gamepic" name="gamepic">
+    <input type="submit" value="upload">
+    <br/>
+    <br/>
+    <button type="submit" class="btn">Add Game</button>
+    <button type="button" class="btn" onclick="closeAddForm()"> Quit</button>
+</form> 
+        </div>
+      </div>
+
+      <script>
+        function openAddForm() {
+          document.getElementById("addform").style.display = "block";
+        }
+        function closeAddForm(){
+          document.getElementById("addform").style.display="none";
+        }
+        
+        function openSearechForm() {
+          document.getElementById("searchform").style.display = "block";
+        }
+        function closeSearchForm(){
+          document.getElementById("searchform").style.display="none";
+        }
+        
+        </script>
+
+</body>
+<footer>
+  <div class="footer">
+  <p>Team - artemis</p>
+  </div>
+  </footer>
+</html>
