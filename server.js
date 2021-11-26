@@ -5,6 +5,12 @@ const exp = require("express");
 const app = exp();
 const PORT = process.env.PORT || 3001;
 
+// Sets up the Express app to handle data parsing
+app.use(exp.urlencoded({ extended: true }));
+app.use(exp.json());
+app.use(exp.static(__dirname + "/public"));
+
+// Demo
 const games = {
     name: 'GTA',
     consoletype: 'Playstation',
@@ -15,8 +21,7 @@ const games = {
   // Routes
 // ===========================================================
 app.get('/', (req, res) => {
-    res.send('Welcome to the page!');
-    res.json(games)
+  res.sendFile(path.join(__dirname + "/../public/views/index.html"));
   });
 
   // port test
