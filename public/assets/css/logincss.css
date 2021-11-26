@@ -1,16 +1,13 @@
 
+    * {
+        font-family: 'Courier New', Courier, monospace;
+        }
     body, html {
-    height: 100%;
-    font-family:'Courier New', Courier, monospace;
-    margin: 0px;
-        padding: 0px;
+        height: 100%;
+        margin: 0;
     }
 
-    * {
-    box-sizing: border-box;
-    }
-    h2{
-        color: white;
+    .nav-main{
         font-size: 40px;
     }
     a:link, a:visited, a:hover,a:active {
@@ -39,8 +36,8 @@
     .container {
     position: absolute;
     line-height: 2.0;
-    right: 23%;
-    top: 19.7%;
+    right: 15.1%;
+    top: 21.9%;
     margin: 18px;
     max-width: 300px;
     padding: 57px;
