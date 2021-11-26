@@ -24,7 +24,7 @@
      <h3>Name: `${game name}`</h3>
      <p>Game id: `${game id}`</p>
      <p>Realease year: `${release year}`</p>
-     <p>Genra: `${game genra}`</p>
+     <p>Genre: `${game genre}`</p>
      <p>Console type: `${console type}`</p>
 </div>
 
@@ -47,7 +47,7 @@
                 <i class="fa fa-star" aria-hidden="true"></i>
                 <i class="fa fa-star" aria-hidden="true"></i>
                 <i class="fa fa-star" aria-hidden="true"></i>
-                <span>70%</span><!--number of 5 starts/total review-->
+                <span>${num%}</span><!--number of 5 starts/total review-->
             </div>
             <div>
                 <i class="fa fa-star" aria-hidden="true"></i>
@@ -55,7 +55,7 @@
                 <i class="fa fa-star" aria-hidden="true"></i>
                 <i class="fa fa-star" aria-hidden="true"></i>
                 <i class="fa fa-star-o" aria-hidden="true"></i>
-                <span>20%</span><!--number of 4 starts/total review-->
+                <span>${num%}</span><!--number of 4 starts/total review-->
             </div>
             <div>
                 <i class="fa fa-star" aria-hidden="true"></i>
@@ -63,7 +63,7 @@
                 <i class="fa fa-star" aria-hidden="true"></i>
                 <i class="fa fa-star-o" aria-hidden="true"></i>
                 <i class="fa fa-star-o" aria-hidden="true"></i>
-                <span>8%</span><!--number of 3 starts/total review-->
+                <span>${num%}</span><!--number of 3 starts/total review-->
             </div>
             <div>
                 <i class="fa fa-star" aria-hidden="true"></i>
@@ -71,7 +71,7 @@
                 <i class="fa fa-star-o" aria-hidden="true"></i>
                 <i class="fa fa-star-o" aria-hidden="true"></i>
                 <i class="fa fa-star-o" aria-hidden="true"></i>
-                <span>4%</span><!--number of 2 starts/total review-->
+                <span>${num%}</span><!--number of 2 starts/total review-->
             </div>
             <div>
                 <i class="fa fa-star" aria-hidden="true"></i>
@@ -79,7 +79,7 @@
                 <i class="fa fa-star-o" aria-hidden="true"></i>
                 <i class="fa fa-star-o" aria-hidden="true"></i>
                 <i class="fa fa-star-o" aria-hidden="true"></i>
-                <span>0%</span><!--number of 0 starts/total review-->
+                <span>${num%}</span><!--number of 0 starts/total review-->
             </div>
         </div>
         <!--game picture-->
@@ -94,8 +94,32 @@
         <hr>
         <h3 class="reviewtitle">Reviews</h3>
         <hr>
-        <button class="addreview">Add a Review</button>
+        <button class="addreview" onclick="openreviewform()">Add a Review</button>
     </div>
+
+    <div class="reviewform" id="reviewform">
+    <form class="rating">
+        <h3>Rate the game:</h3>
+        <div class="rating">
+                <input type="radio" name="test" id="one" checked />
+                <label for="one"><i class="fa fa-star"></i></label>
+                <input type="radio" name="test" id="two" />
+                <label for="two"><i class="fa fa-star"></i></label>
+                <input type="radio" name="test" id="three" />
+                <label for="three"><i class="fa fa-star"></i></label>
+                <input type="radio" name="test" id="four" />
+                <label for="four"><i class="fa fa-star"></i></label>
+                <input type="radio" name="test" id="five" />
+                <label for="five"><i class="fa fa-star"></i></label>
+        </div>
+  <br/>
+  <h3> Comment:</h3>
+  <textarea id="comment" name="comment" rows="6" cols="30"></textarea>
+
+  <button type="submit" class="btn">Submit</button>
+  <button type="button" class="btn" onclick="closeReviewForm()"> Cancel</button>
+</form>
+        </div>
 
 
     <div class="col-md-12 col-sm-12 col-xs-12">
@@ -123,7 +147,15 @@
             </div>
     </div>
 </div>
-
+<script>
+      function openreviewform() {
+          document.getElementById("reviewform").style.display = "block";
+        }
+        function closeReviewForm(){
+            document.getElementById("reviewform").style.display="none";
+        }
+ 
+    </script>
     
 </body>
 </html>
