@@ -7,7 +7,7 @@ CREATE TABLE games (
     publication_year INT NOT NULL,
     game_genre VARCHAR (30) NOT NULL,
     console VARCHAR (30),
-    PRIMARY KEY (id),
+    PRIMARY KEY (id)
 );
 
 CREATE TABLE reviews (
