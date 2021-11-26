@@ -21,8 +21,8 @@ const games = {
   // Routes
 // ===========================================================
 app.get('/', (req, res) => {
- // res.sendFile(path.join(__dirname + "/../public/views/index.html"));
-   res.json(games);
+ res.sendFile(path.join(__dirname + "/../public/index.html"));
+  
   });
 
   // port test
