@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Go Games GO</title>
     <link rel="icon" type="image/png" href="../img/game-logo.jpg"/>
-    <link rel="stylesheet" href="../assets/css/reset.css">
-    <link rel="stylesheet" href="../assets/css/miancss.css">
+    <link rel="stylesheet" href="../public/assets/css/reset.css">
+    <link rel="stylesheet" href="../public/assets/css/miancss.css">
 </head>
 <body>
   <div id="bg">
@@ -30,6 +30,7 @@
           </nav>
 
       <!--for search bar-->
+      <!--full page -->
       <button class="searchformbtn" onclick="openSearechForm()">Game Search</button>
       <div class="searchform" id="searchform">
         <label for="Search">Please enter keywords:
@@ -53,27 +54,27 @@
 <form>
     <label for="gamename">Game name:</label>
     <br/>
-  <input type="text" id="gamename" name="gamename">
+  <input type="text" id="gamename" name="gamename" required>
   <br/>
   
   <label for="releaseyear">Release year:</label>
   <br/>
-  <input type="text" id="releaseyear" name=releaseyear>
+  <input type="text" id="releaseyear" name=releaseyear required>
   <br/>
 
-  <label for="gametype"> Game type:</label>
+  <label for="gamegenre"> Game genre:</label>
   <br/>
-  <input type="text" id="gametype" name="gametype">
+  <input type="text" id="gamegenre" name="gamegenre" required>
   <br/>
 
   <label for="consoletype"> Console type:</label>
   <br/>
-  <input type="text" id="consoletype" name="consoletype">
+  <input type="text" id="consoletype" name="consoletype" required>
   <br/>
 
   <label for="description"> Description:</label>
   <br/>
-  <textarea id="description" name="description" rows="4" cols="20"></textarea>
+  <textarea id="description" name="description" rows="5" cols="50"></textarea>
   <br/>
 <!--need upload pic part later-->
     <input type="file" id="gamepic" name="gamepic">
@@ -87,18 +88,21 @@
       </div>
 
       <script>
-        function openAddForm() {
-          document.getElementById("addform").style.display = "block";
+        function closeSearchForm(){
+          document.getElementById("searchform").style.display="none";
         }
         function closeAddForm(){
           document.getElementById("addform").style.display="none";
         }
         
+        function openAddForm() {
+          document.getElementById("addform").style.display = "block";
+          closeSearchForm();
+        }
+      
         function openSearechForm() {
           document.getElementById("searchform").style.display = "block";
-        }
-        function closeSearchForm(){
-          document.getElementById("searchform").style.display="none";
+          closeAddForm();
         }
         
         </script>

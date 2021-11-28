@@ -1,17 +1,17 @@
 
+    * {
+        font-family: 'Courier New', Courier, monospace;
+        }
     body, html {
-    height: 100%;
-    font-family:'Courier New', Courier, monospace;
-    margin: 0px;
-        padding: 0px;
+        height: 100%;
+        margin: 0;
     }
 
-    * {
-    box-sizing: border-box;
-    }
-    h2{
-        color: white;
+    .nav-main{
         font-size: 40px;
+        position: fixed;
+        top: 15px;
+        left: 20px;
     }
     a:link, a:visited, a:hover,a:active {
         color: white;
@@ -37,14 +37,14 @@
 
     /* styles to the form  */
     .container {
-    position: absolute;
+    position: fixed;
     line-height: 2.0;
-    right: 40%;
-    top: 20%;
-    margin: 20px;
+    right: 235px;
+    top: 161px;
+    margin: 18px;
     max-width: 300px;
-    padding: 50px;
-    background-color: white;
+    padding: 57.5px;
+    background-color: whitesmoke;
     }
     .name{
         font-weight: bold;
@@ -58,11 +58,11 @@
     padding: 15px;
     margin: 5px 0 22px 0;
     border: none;
-    background: #f1f1f1;
+    background: whitesmoke;
     }
 
     input[type=text]:focus, input[type=password]:focus {
-    background-color: #ddd;
+    background-color: gray;
     outline: none;
     }
 
@@ -80,6 +80,21 @@
     .btn:hover {
     opacity: 1;
     }
+    #slideshow {  
+        position: relative; 
+        width: 240px; 
+        height: 240px; 
+
+      
+      }
+      
+      #slideshow > div { 
+        background-color: whitesmoke;
+        padding: 5px;
+        position: fixed; 
+        left:215px;
+        top: 179px;
+      }
 
     .footer{
         position:absolute;
