@@ -30,6 +30,24 @@ body, html {
     font-size:10px;
     padding-left: 5px;
 }
+.rating {
+    display: inline-block;
+    position: relative;
+    height: 50px;
+    line-height: 50px;
+    font-size: 50px;
+  }
+  .reviewform{
+    padding: 20px 10px;
+    display: none;
+    position:absolute;
+    bottom: 10px;
+    right: 50px;
+    border: 3px solid whitesmoke;
+    z-index: 9;
+    background-color: whitesmoke;
+  }
+  
  .row{
     position: relative;
     right: 10px;
@@ -58,3 +76,32 @@ body, html {
     margin-right: 80px;
     margin-top: -60px;
   }
+  .rating {
+	background: whitesmoke;
+}
+
+input[type="radio"] {
+	position: fixed;
+	top: 0;
+	right: 100%;
+}
+
+label {
+	font-size: 50px;
+	padding: 1px;
+	margin: 0;
+	float: left;
+	cursor: pointer;
+	@include transition(0.2s);
+}
+
+input[type="radio"]:checked ~ input + label {
+	background: none;
+	color: gray;
+}
+
+input + label {
+	color: orange;
+}
+
+

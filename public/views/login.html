@@ -11,8 +11,34 @@
 <body>
 
 <div id="bg">
-    <h2><a href="./index.html">Go Game GO</a></h2>
-  <form class="container">
+
+  <div class="wrap">
+    <br/>
+    <ul class="nav-main">
+      <li><a class= "main" href="../index.html">Go games GO</a></li>
+    </ul>
+  
+
+
+    <div id="slideshow">
+      <div>
+        <img src="../img/formpic.jpg" height="434px" width="644px">
+      </div>
+      <div>
+        <img src="../img/formpic2.jpg" height="434px" width="644px">
+      </div>
+      <div>
+        <img src="../img/formpic3.jpg" height="434px" width="644px">
+      </div>
+      <div>
+        <img src="../img/formpic4.jpg" height="434px" width="644px">
+      </div>
+      <div>
+        <img src="../img/formpic5.jpg" height="434px" width="644px">
+      </div>
+    </div>
+
+    <form class="container">
     <h1 class="name"> User Login</h1>
 
     <label for="email"><b>Email</b></label>
@@ -23,8 +49,22 @@
 
     <button type="submit" class="btn">Login</button>
   </form>
+  </div>
 </div>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+  $("#slideshow > div:gt(0)").hide();
+  
+  setInterval(function() { 
+    $('#slideshow > div:first')
+    .fadeOut(1000)
+    .next()
+    .fadeIn(1000)
+    .end()
+    .appendTo('#slideshow');
+  }, 4000);
+        </script>
 
 </body>
 <footer>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="../img/game-logo.jpg"/>
+<link rel="stylesheet" href="../assets/css/reset.css">
+<link rel="stylesheet" href="../assets/css/searchresultcss.css">
+<title>${searchName} - Search</title>
+</head>
+<body>
+    <nav class="navigate" id="navigate">
+      
+        <ul class="nav-main">
+          <li class="active"><a href="../index.html">Go games GO</a></li>
+        </ul>
+
+
+        <ul class="user">
+            <li>${Username} User12345</li>     
+          
+        </ul>
+        </nav>
+
+<div class="container">
+<div class="card">
+<table class="table">
+    <!--header-->
+    <tr>
+        <th>Picture</th>
+        <th>Game Name</th>
+        <th>Release Year</th>
+        <th>Game Genre</th>
+      </tr>
+    <!--1-->
+        <tr>
+            <td>
+                <div class="cover">
+                    <img src="../img/sample.jpg" alt="sample img" />
+                </div>
+            </td>
+            <td>
+                <div class="gamename">
+                    <a href="#">${gamename}Animal corssing</a>
+                </div>
+            </td>
+            <td>
+                <div class="year">
+                    <span> ${gameyear}2001</span>
+                </td>
+            <td>
+                <div class="bg-genre">
+                    <span class="genre">${gamegenre}Social Simulation</span>
+                </div>
+            </td>
+            <td>
+        </tr>
+
+        <!--2-->
+        <tr>
+            <td>
+                <div class="cover">
+                    <img src="../img/sample2.png" alt="sample2" />
+                </div>
+            </td>
+            <td>
+                <div class="gamename">
+                    <a href="#">${gamename}Super Mario Galaxy 2</a>
+                </div>
+            </td>
+            <td>
+                <div class="year">
+                    <span> ${gameyear}2007</span>
+                </td>
+            <td>
+                <div class="bg-genre">
+                    <span class="genre">${gamegenre}Action-adventure</span>
+                </div> 
+            </td>
+            <td>
+        </tr>
+</table>
+</div>
+</div>
+</div>
+
+
+</body>
+</html>
