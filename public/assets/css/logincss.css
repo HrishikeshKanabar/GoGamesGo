@@ -9,6 +9,8 @@
 
     .nav-main{
         font-size: 40px;
+        margin-top: 10px;
+        margin-left: 10px;
     }
     a:link, a:visited, a:hover,a:active {
         color: white;
@@ -34,13 +36,13 @@
 
     /* styles to the form  */
     .container {
-    position: absolute;
+    position: fixed;
     line-height: 2.0;
-    right: 15.1%;
-    top: 21.9%;
+    right: 235px;
+    top: 161px;
     margin: 18px;
     max-width: 300px;
-    padding: 57px;
+    padding: 57.5px;
     background-color: whitesmoke;
     }
     .name{
@@ -88,9 +90,9 @@
       #slideshow > div { 
         background-color: whitesmoke;
         padding: 5px;
-        position: absolute; 
-        left:90%;
-        top: 50%;
+        position: fixed; 
+        left:215px;
+        top: 179px;
       }
 
     .footer{
