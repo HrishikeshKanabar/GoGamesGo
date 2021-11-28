@@ -77,28 +77,36 @@ a:link, a:visited, a:hover,a:active {
     box-shadow: 0 0 10px whitesmoke;
 
    }
+      /*for the form*/
    .addform{
-        padding: 20px 10px;
-        display: none;
-        position:absolute;
-        bottom: 10px;
-        right: 50px;
-        border: 3px solid whitesmoke;
-        z-index: 9;
-        background-color: whitesmoke;
+    line-height: 2.0;
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 0%;
+    padding: 50px 50px;
+    transform: translate(-50%, 5%);
+    border: 3px solid whitesmoke;
+    border-radius: 14px;
+    z-index: 9;
+    background: linear-gradient(thistle,skyblue);
       }
+   
     .searchform{
-        padding: 20px 10px;
+        line-height: 2.0;
         display: none;
-        position: absolute;
-        bottom: 200px;
-        left: 50px;
+        position: fixed;
+        left: 45%;
+        top: 25%;
+        padding: 50px 50px;
+        transform: translate(-50%, 5%);
         border: 3px solid whitesmoke;
+        border-radius: 14px;
         z-index: 9;
-        background-color: whitesmoke;
+        background: linear-gradient(skyblue,thistle);
 
     }
-
+    /*for the main page button*/
    .searchformbtn{
     position: absolute;
     padding: 16px;
@@ -132,14 +140,17 @@ a:link, a:visited, a:hover,a:active {
     padding: 15px 0;
     
 }
-
+/*for the form button*/
 .btn{
+    margin-top: 10px;
     background-color: gray;
-    color: white;
+    padding: 12px 20px;
     border: none;
+    color: #fff;
     cursor: pointer;
-    opacity: 0.9;
-    
+    width: 100%;
+    margin-bottom: 15px;
+    opacity: 0.8;
     }
 
 
