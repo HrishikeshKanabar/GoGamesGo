@@ -8,6 +8,9 @@ body, html {
   }
   .nav-main{
     font-size: 40px;
+    position: fixed;
+    top: 15px;
+    left: 20px;
 }
 .main:link, .main:visited, .main:hover,.main:active {
     color: white;
@@ -31,12 +34,12 @@ body, html {
   .register{
       font-size: 20px;
       background-color: white;
-      line-height: 2.0;
       max-width: 500px;
-      padding: 50px;
-      position: absolute;
-      top: 20%;
+      padding: 60px;
+      position: fixed;
+      top: 10px;
       right: 30%;
+      border-radius: 15px;
   }
   h1{
       
@@ -57,11 +60,26 @@ body, html {
     margin-left: 150px;
     padding: 10px;
     text-align: center;
-    background-color: grays;
+    background-color: darkgrey;
+}
+.registerbtn:hover{
+    background-color:gray;
 }
 .signin{
     margin-left: 50px;
 }
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: whitesmoke;
+    }
+
+    input[type=text]:focus, input[type=password]:focus {
+    background-color: gray;
+    outline: none;
+    }
 
 
 .footer{
