@@ -8,7 +8,7 @@ router.get("/", (req, res) => {
     // find all games
     // be sure to include its associated Reviews
     Game.findAll({
-      include: [Review],
+      include: [Reviews],
     }).then((GameReviews) => {
       res.json(GameReviews);
     });
