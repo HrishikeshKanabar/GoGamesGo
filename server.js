@@ -1,31 +1,18 @@
-// Express JS dependency
-const exp = require("express");
+const express = require('express');
+const routes = require('./routes');
+// import sequelize connection
+const sequelize = require('./config/connection');
 
-// Start
-const app = exp();
+const app = express();
 const PORT = process.env.PORT || 3001;
 
-// Sets up the Express app to handle data parsing
-app.use(exp.urlencoded({ extended: true }));
-app.use(exp.json());
-app.use(exp.static(__dirname + "/public"));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-// Demo
-const games = {
-    name: 'GTA',
-    consoletype: 'Playstation',
-    releasedate: '2012',
-    type: 'war'
-  };
+app.use(routes);
 
-  // Routes
-// ===========================================================
-app.get('/', (req, res) => {
- res.sendFile(path.join(__dirname + "/../public/index.html"));
-  
-  });
+sequelize.sync({ force: true });
 
-  // port test
 app.listen(PORT, () => {
-  console.log("API server Started on port !!!");
+  console.log(`App listening on port ${PORT}!`);
 });

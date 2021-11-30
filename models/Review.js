@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require("sequelize");
-const sequelize= require("../config/connection");
+const sequelize = require("../config/connection");
 
-class Game extends Model {}
+class Review extends Model {}
 
-Game.init(
+Review.init(
     {
       // define columns
       id: {
@@ -12,31 +12,29 @@ Game.init(
         primaryKey: true,
         autoIncrement: true,
       },
-      game_title: {
-        type: DataTypes.STRING,
+      review_desc: {
+        type: DataTypes.INTEGER,
         allowNull: false,
       },
-      publication_year: {
+      rating: {
         type: DataTypes.INTEGER,
         allowNull: true,
       },
-      game_genre:{
-        type: DataTypes.STRING,
-        allowNull: true,
-      },
-      console:{
-        type: DataTypes.STRING,
-        allowNull: true,
-      }
+      game_id: {
+        type: DataTypes.INTEGER,
+        references: {
+            model: "game",
+            key: "id",
+          },
+      },   
     },
     {
       sequelize,
       timestamps: true,
       freezeTableName: true,
       underscored: true,
-      modelName: "game",
+      modelName: "review",
     }
   );
 
-  
-  module.exports = Game;
+  module.exports = Review;
