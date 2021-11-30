@@ -16,6 +16,11 @@ Game.init(
         type: DataTypes.STRING,
         allowNull: false,
       },
+      game_desc:
+      {
+        type: DataTypes.STRING,
+        allowNull: true,
+      },
       publication_year: {
         type: DataTypes.INTEGER,
         allowNull: true,

@@ -1,17 +1,40 @@
 const router = require("express").Router();
 const { response } = require("express");
 const {Reviews,Game } = require("../../models");
+const popup = require('node-popup');
+const { Op } = require("sequelize");
 
-// The '/api/games/' endpoint
+// The '/api/games/search' endpoint
 
-router.get("/", (req, res) => {
-    // find all games
-    // be sure to include its associated Reviews
+router.post("/search", (req, res) => {
+    
+    console.log(req.body);
     Game.findAll({
+      where: {
+        [Op.or]: [
+          {game_title:{[Op.like]:'%'+req.body.keyword+'%'}},
+          {game_genre:{[Op.like]:'%'+req.body.keyword+'%'}},
+          {game_desc:{[Op.like]:'%'+req.body.keyword+'%'}}
+        ]
+      },
       include: [Reviews],
     }).then((GameReviews) => {
       res.json(GameReviews);
     });
   });
+
+// Add game to database 
+router.post("/",(req, res)=>{
+      // create a new category
+  Game.create({
+    game_title: req.body.gamename,
+    publication_year:req.body.releaseyear,
+    game_genre:req.body.gamegenre,
+    game_desc:req.body.description,
+    console:req.body.consoletype,
+  }).then((newGame) => {
+    res.json(newGame);
+  });
+});
 
   module.exports = router;
