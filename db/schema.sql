@@ -6,6 +6,7 @@ CREATE TABLE games (
     game_title VARCHAR (80) NOT NULL,
     publication_year INT NOT NULL,
     game_genre VARCHAR (30) NOT NULL,
+    game_desc VARCHAR (1000) NOT NULL,
     console VARCHAR (30),
     PRIMARY KEY (id)
 );

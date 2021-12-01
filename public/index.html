@@ -5,9 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Go Games GO</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="icon" type="image/png" href="../img/game-logo.jpg"/>
-    <link rel="stylesheet" href="../public/assets/css/reset.css">
-    <link rel="stylesheet" href="../public/assets/css/miancss.css">
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/miancss.css">
 </head>
 <body>
   <div id="bg">
@@ -33,25 +34,27 @@
       <!--full page -->
       <button class="searchformbtn" onclick="openSearechForm()">Game Search</button>
       <div class="searchform" id="searchform">
+        <form method="post" action="/api/games/search" >
         <label for="Search">Please enter keywords:
         </label>   
 
-        <input class="gamesearch" type="text",placeholder="game name,realase year, console type, game type" maxlength="15">
+        <input class="gamesearch" type="text" name ="keyword" placeholder="game name,realase year, console type, game type" maxlength="15">
         <br/>
         <p> eg: game name, release year, console type, or game type</p>
         <br/>
         <button  class="btn" type="submit">Search</button>  
-        <button class="btn" type="submit" onclick="closeSearchForm()">Quit</button>
+        <button class="btn" type="button" onclick="closeSearchForm()">Quit</button>
          
+      </form>
           </div>
-
+       
 
 
     <!--for add bar-->
   
 <button class="addformbtn" onclick="openAddForm()">Add a Game</button>
 <div class="addform" id="addform">
-<form>
+<form method="post" action="/api/games" >
     <label for="gamename">Game name:</label>
     <br/>
   <input type="text" id="gamename" name="gamename" required>
@@ -81,13 +84,17 @@
     <input type="submit" value="upload">
     <br/>
     <br/>
-    <button type="submit" class="btn">Add Game</button>
+    <button type="submit" class="btn" onclick="addGame()">Add Game</button>
     <button type="button" class="btn" onclick="closeAddForm()"> Quit</button>
 </form> 
         </div>
       </div>
 
       <script>
+        function addGame(){
+           // Add alert
+        }
+
         function closeSearchForm(){
           document.getElementById("searchform").style.display="none";
         }
@@ -108,6 +115,8 @@
         </script>
 
 </body>
+
+
 <footer>
   <div class="footer">
   <p>Team - artemis</p>
