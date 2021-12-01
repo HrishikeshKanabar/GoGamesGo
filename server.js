@@ -1,31 +1,32 @@
-// Express JS dependency
-const exp = require("express");
+const express = require('express');
+const routes = require('./routes');
+// import sequelize connection
+const sequelize = require('./config/connection');
+// handle bars
 
-// Start
-const app = exp();
+
+const app = express();
 const PORT = process.env.PORT || 3001;
+// Set Handlebars as the default template engine.
 
-// Sets up the Express app to handle data parsing
-app.use(exp.urlencoded({ extended: true }));
-app.use(exp.json());
-app.use(exp.static(__dirname + "/public"));
 
-// Demo
-const games = {
-    name: 'GTA',
-    consoletype: 'Playstation',
-    releasedate: '2012',
-    type: 'war'
-  };
 
-  // Routes
-// ===========================================================
-app.get('/', (req, res) => {
- res.sendFile(path.join(__dirname + "/../public/index.html"));
-  
-  });
+var exphbs  = require('express-handlebars');
+var hbs = exphbs.create({ defaultLayout: 'main' });
 
-  // port test
+// Register `hbs.engine` with the Express app.
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
+
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static(__dirname + "/public"));
+
+app.use(routes);
+
+sequelize.sync({ force: true });
+
 app.listen(PORT, () => {
-  console.log("API server Started on port !!!");
+  console.log(`App listening on port ${PORT}!`);
 });
