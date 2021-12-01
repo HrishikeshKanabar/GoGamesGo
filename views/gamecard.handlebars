@@ -1,0 +1,32 @@
+<div class="container">
+<div class="row">
+    
+      {{#each games}}
+    
+  <!--game word description-->
+<div class="card" style="width: 18rem; align-content: center;justify-content: center;margin:5px">
+  <div class="card-body">
+    <h5 class="card-title">{{game_title}}</h5>
+    <p class="card-text">Realease year: {{publication_year}}</p>
+    <p class="card-text">Genre: {{game_genre}}</p>
+    <p class="card-text">Console type: {{console}}</p>
+  </div>
+{{/each}}
+</div>
+</div>
+ 
+
+
+
+
+   
+<!---
+<ul>
+  {{#each games}}
+  <li>
+    <p>{{id}}</p>
+    <p>{{game_genre}}</p>
+    <p>{{publication_year}}</p>
+  </li>
+  {{/each}}
+</ul>-->

@@ -3,7 +3,7 @@ const { response } = require("express");
 const {Reviews,Game } = require("../../models");
 const popup = require('node-popup');
 const { Op } = require("sequelize");
-
+const notifier = require('node-notifier');
 // The '/api/games/search' endpoint
 
 router.post("/search", (req, res) => {
@@ -18,8 +18,11 @@ router.post("/search", (req, res) => {
         ]
       },
       include: [Reviews],
+      raw:true
     }).then((GameReviews) => {
-      res.json(GameReviews);
+      //res.json(GameReviews);
+      //console.log(GameReviews);
+      return res.render('gamecard',{games:GameReviews});
     });
   });
 
@@ -33,7 +36,9 @@ router.post("/",(req, res)=>{
     game_desc:req.body.description,
     console:req.body.consoletype,
   }).then((newGame) => {
-    res.json(newGame);
+    //res.json(newGame);
+    res.redirect('/');
+
   });
 });
 
