@@ -34,10 +34,10 @@
         <ul class="nav-main">
           <li class="active"><a href="../public/index.html">Go games GO</a></li>
         </ul>
-
+ 
 
         <ul class="user">
-            <li>User Admin</li>     
+            <li s>User Admin</li>     
           
         </ul>
         </nav>
@@ -47,7 +47,7 @@
 <table class="table">
     <!--header-->
     <tr>
-        <th>Picture</th>
+        <!--<th>Picture</th>-->
         <th>Game Name</th>
         <th>Release Year</th>
         <th>Game Genre</th>
@@ -56,13 +56,15 @@
     <!--1-->
      {{#each games}}
         <tr>
-            <td>
-                <div class="cover">
-                    <img src="../public/img/sample.jpg" alt="sample img" />
+          <!--
+            <td style=" border-bottom: solid black;">
+                <div class="cover" >
+                    <img src="./sample.jpg" alt="sample img" />
                 </div>
             </td>
+            -->
             <td>
-                <div class="gamename">
+                <div class="gamename" >
                     <a href="#">{{game_title}}</a>
                 </div>
             </td>
@@ -72,7 +74,7 @@
                 </td>
             <td>
                 <div class="bg-genre">
-                    <span class="genre"> {{game_genre}}</span>
+                    <span> {{game_genre}}</span>
                 </div>
             </td>
             <td>
@@ -87,8 +89,107 @@
 </div>
 </div>
 
+<style>
+      * {
+    font-family: 'Courier New', Courier, monospace;
+    }
+    ul{
+      list-style-type: none;
+    }
+    body{
+    background-image: linear-gradient(to right, skyblue 0%, thistle 30%, skyblue 100%);
+    height: 100%;
+    margin: 0;
+    }
+    .nav-main{
+    font-size: 40px;
+    margin-top: 10px;
+    margin-left:0;
+    }
 
+    a:link, a:visited, a:hover,a:active {
+    color: white;
+    text-decoration: none;
+    }
+
+    .user{
+    text-align: right;
+    line-height: 2.0;
+    margin-right: 20px;
+    margin-top: -40px;
+    padding: 15px 0;
+    font-size: 20px;
+    }
+
+
+    .table tr:first-child td {
+    border-bottom: solid black;
+    }
+
+    .table, .gamename a {
+    font-weight: 40px;
+    font-size: 20px;
+    color: black;
+    text-decoration: none;
+    line-height: 1.5;
+    }
+
+    .table, .gamename a:hover {
+    color: cadetblue;
+    text-decoration: none;
+    }
+
+    .table, .gamename{
+    min-width: 400px;
+    margin: 30px;
+    font-size: 20px;
+    color: cadetblue;
+    text-decoration: none;
+    }
+
+
+
+    span {
+    font-size:20px;
+    color: gray;
+    text-align: center;
+    }
+
+    .table{
+    width: 60px;
+    height: 40px;
+    color: #fd8b2c;
+    position: fixed;
+    margin-top: 30px;
+    margin-left: 80px;
+    }
+    .table th{
+    color: black;
+    border-bottom: solid gray;
+    }
+    .table td{
+    border-bottom: solid white;
+    }
+
+    .bg-genre{
+    background-color: darksalmon;
+    color: white;
+    min-width: 200px;
+    padding: 5px;
+    display: inline-flex;
+    white-space: nowrap;
+    border-radius: 15px;
+    margin-left: 5px;
+    text-align: center;
+    }
+    .year{
+    margin-left: 30px;
+    text-align: center;
+    }
+
+  </style>
 </body>
+
 </html>
 
 
