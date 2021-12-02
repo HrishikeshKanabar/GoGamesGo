@@ -84,16 +84,29 @@
     <input type="submit" value="upload">
     <br/>
     <br/>
-    <button type="submit" class="btn" onclick="addGame()">Add Game</button>
+    <!--display submit alert-->    
+    <div class="container">
+    <div id="message" class="hide" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <div id="alert-content"></div>
+      </div>
+  <button type="submit" class="btn" onclick="addGame()">Add Game</button>
+  </div>
     <button type="button" class="btn" onclick="closeAddForm()"> Quit</button>
 </form> 
         </div>
       </div>
 
       <script>
-        function addGame(){
-           // Add alert
-        }
+       // function addGame() {
+          $('#form').submit(function(e) {
+                $('#message').removeClass('hide').addClass('alert alert-success alert-dismissible').slideDown().show();
+                $('#alert-content').html('<h4>SUCCESSFULLY SUBMITTED</h4>');
+                $('#modal').modal('show');
+                e.preventDefault();
+            });
+
+       // }
 
         function closeSearchForm(){
           document.getElementById("searchform").style.display="none";
@@ -113,6 +126,8 @@
         }
         
         </script>
+        <script src="http://code.jquery.com/jquery.js"></script>
+        
 
 </body>
 
