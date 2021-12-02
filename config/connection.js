@@ -4,7 +4,7 @@ const Sequelize = require('sequelize');
 
 const sequelize = process.env.JAWSDB_URL
   ? new Sequelize(process.env.JAWSDB_URL)
-  : new Sequelize('games_archive','root','password', {
+  : new Sequelize('games_archive','root','junyaQ', {
       host: 'localhost',
       dialect: 'mysql',
       dialectOptions: {
