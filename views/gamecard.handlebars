@@ -1,9 +1,10 @@
+   
+<!--
 <div class="container">
 <div class="row">
     
       {{#each games}}
-    
-  <!--game word description-->
+  <!--game word description
 <div class="card" style="width: 18rem; align-content: center;justify-content: center;margin:5px">
   <div class="card-body">
     <h5 class="card-title">{{game_title}}</h5>
@@ -14,19 +15,81 @@
 {{/each}}
 </div>
 </div>
- 
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="icon" type="image/png" href="/../img/game-logo.jpg"/>
+<link rel="stylesheet" href="/../public/assets/css/reset.css">
+<link rel="stylesheet" href="/../public/assets/css/searchresultcss.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<title>Game Search</title>
+</head>
+<body>
+    <nav class="navigate" id="navigate">
+      
+        <ul class="nav-main">
+          <li class="active"><a href="../public/index.html">Go games GO</a></li>
+        </ul>
+
+
+        <ul class="user">
+            <li>User Admin</li>     
+          
+        </ul>
+        </nav>
+
+<div class="container">
+<div class="card">
+<table class="table">
+    <!--header-->
+    <tr>
+        <th>Picture</th>
+        <th>Game Name</th>
+        <th>Release Year</th>
+        <th>Game Genre</th>
+        <th>Console type</th>
+      </tr>
+    <!--1-->
+     {{#each games}}
+        <tr>
+            <td>
+                <div class="cover">
+                    <img src="../public/img/sample.jpg" alt="sample img" />
+                </div>
+            </td>
+            <td>
+                <div class="gamename">
+                    <a href="#">{{game_title}}</a>
+                </div>
+            </td>
+            <td>
+                <div class="year">
+                    <span>{{publication_year}}</span>
+                </td>
+            <td>
+                <div class="bg-genre">
+                    <span class="genre"> {{game_genre}}</span>
+                </div>
+            </td>
+            <td>
+              <div class="console">
+                <span class="console">{{console}}</span>
+                </div>
+              </td>
+              {{/each}}
+        </tr>
+</table>
+</div>
+</div>
+</div>
+
+
+</body>
+</html>
 
 
 
-
-   
-<!---
-<ul>
-  {{#each games}}
-  <li>
-    <p>{{id}}</p>
-    <p>{{game_genre}}</p>
-    <p>{{publication_year}}</p>
-  </li>
-  {{/each}}
-</ul>-->
