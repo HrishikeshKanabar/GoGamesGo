@@ -14,7 +14,9 @@ router.post("/search", (req, res) => {
         [Op.or]: [
           {game_title:{[Op.like]:'%'+req.body.keyword+'%'}},
           {game_genre:{[Op.like]:'%'+req.body.keyword+'%'}},
-          {game_desc:{[Op.like]:'%'+req.body.keyword+'%'}}
+          {game_desc:{[Op.like]:'%'+req.body.keyword+'%'}},
+          {console:{[Op.like]:'%'+req.body.keyword+'%'}}
+         
         ]
       },
       include: [Reviews],
