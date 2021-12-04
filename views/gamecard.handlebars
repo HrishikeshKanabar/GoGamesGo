@@ -16,77 +16,20 @@
 <div class="container">
 
 <div class="col-md-12">
-    {{#each games}}
+    
     <h3>{{game_title}} REVIEWS</h3>
     <hr>
 </div>
+
                 <!--game word description-->
 <div class="description col-md-3 col-sm-3 col-xs-12 rating-part-left text-center">
      <h3>Name: {{game_title}}</h3>
-     <p>Game id: {{id}}</p>
      <p>Realease year: {{publication_year}}</p>
      <p>Genre: {{game_genre}}</p>
      <p>Console type:{{console}}</p>
 </div>
 
-<div>
-    <div class="col-md-3 col-sm-3 col-xs-12 rating-part-left text-center">
-        <h1>${num}</h1>
-        <i class="fa fa-star" aria-hidden="true"></i>
-        <i class="fa fa-star" aria-hidden="true"></i>
-        <i class="fa fa-star" aria-hidden="true"></i>
-        <i class="fa fa-star" aria-hidden="true"></i>
-        <i class="fa fa-star" aria-hidden="true"></i>
-        <p>Based on ${totalNumber} reviews</p>
-    </div>
-    </div>
 
-    <div class="col-md-3 col-sm-3 col-xs-12 rating-part-right">
-            <div>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <span>${num%}</span><!--number of 5 starts/total review-->
-            </div>
-            <div>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star-o" aria-hidden="true"></i>
-                <span>${num%}</span><!--number of 4 starts/total review-->
-            </div>
-            <div>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star-o" aria-hidden="true"></i>
-                <i class="fa fa-star-o" aria-hidden="true"></i>
-                <span>${num%}</span><!--number of 3 starts/total review-->
-            </div>
-            <div>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star-o" aria-hidden="true"></i>
-                <i class="fa fa-star-o" aria-hidden="true"></i>
-                <i class="fa fa-star-o" aria-hidden="true"></i>
-                <span>${num%}</span><!--number of 2 starts/total review-->
-            </div>
-            <div>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star-o" aria-hidden="true"></i>
-                <i class="fa fa-star-o" aria-hidden="true"></i>
-                <i class="fa fa-star-o" aria-hidden="true"></i>
-                <i class="fa fa-star-o" aria-hidden="true"></i>
-                <span>${num%}</span><!--number of 0 starts/total review-->
-            </div>
-        </div>
-        <!--game picture-->
-        <div class="gamepic">
-        <img src="../img/sample.jpg" alt="${game name}">
-    </div>
 
 
 
@@ -99,18 +42,18 @@
     </div>
 
     <div class="reviewform" id="reviewform">
-    <form class="rating">
+    <form class="rating" method="post" action="/api/games/addreviews/{{id}}">
         <h3>Rate the game:</h3>
         <div class="rating">
-                <input type="radio" name="test" id="one" checked />
+                <input type="radio" name="test" id="one" value="1" checked />
                 <label for="one"><i class="fa fa-star"></i></label>
-                <input type="radio" name="test" id="two" />
+                <input type="radio" name="test" id="two" value="2" />
                 <label for="two"><i class="fa fa-star"></i></label>
-                <input type="radio" name="test" id="three" />
+                <input type="radio" name="test" id="three" value="3"/>
                 <label for="three"><i class="fa fa-star"></i></label>
-                <input type="radio" name="test" id="four" />
+                <input type="radio" name="test" id="four" value="4" />
                 <label for="four"><i class="fa fa-star"></i></label>
-                <input type="radio" name="test" id="five" />
+                <input type="radio" name="test" id="five" value="5" />
                 <label for="five"><i class="fa fa-star"></i></label>
         </div>
   <br/>
@@ -122,19 +65,24 @@
 </form>
         </div>
 
-
+{{#each reviews}}
     <div class="col-md-12 col-sm-12 col-xs-12">
-            <div class="product-rating-panel-left">
-                    <!-- date name review-->
-                    <div class="col-md-8 col-sm-8 col-xs-12">
-                        <span>${username}</span><br>
-                        <p>10 days ago</p>
-                    </div>
-            </div>
+
             <div class="product-rating-panel-right">
                     <div>
 
                         <!--review stars row-->
+                        {{#if (eq rating "1")}}  
+                          <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star-o" aria-hidden="true"></i>
+                        <i class="fa fa-star-o" aria-hidden="true"></i>
+                        <i class="fa fa-star-o" aria-hidden="true"></i>
+                        <i class="fa fa-star-o" aria-hidden="true"></i>
+  
+{{/if}}
+
+    {
+
                         <i class="fa fa-star" aria-hidden="true"></i>
                         <i class="fa fa-star" aria-hidden="true"></i>
                         <i class="fa fa-star" aria-hidden="true"></i>
@@ -142,13 +90,14 @@
                         <i class="fa fa-star-o" aria-hidden="true"></i>
                     </div>
                     <div>
-                        <p>some review typed here 
+                        <p>{{review_desc}}
                         </p>
                     </div>
             </div>
     </div>
+    {{/each}}
 </div>
- {{/each}}
+
 <script>
       function openreviewform() {
           document.getElementById("reviewform").style.display = "block";
