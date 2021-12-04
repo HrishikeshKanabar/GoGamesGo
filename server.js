@@ -6,7 +6,7 @@ const sequelize = require('./config/connection');
 
 
 const app = express();
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 8080;
 // Set Handlebars as the default template engine.
 
 
@@ -27,6 +27,6 @@ app.use(routes);
 
 sequelize.sync({ force: true });
 
-app.listen(process.env.PORT || 3001, function(){
-  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+app.listen(PORT, () => {
+  console.log(`App listening on port ${PORT}!`);
 });
