@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Go Games GO - ${gamename}</title>
+<title>Go Games GO </title>
 <link rel="icon" type="image/png" href="../img/game-logo.jpg"/>
 <link rel="stylesheet" href="../assets/css/reset.css">
 <link rel="stylesheet" href="../assets/css/gamecardcss.css">
@@ -14,20 +14,23 @@
 </head>
 <body>
 <div class="container">
+    <ul class="nav-main">
+        <li class="active"><a href="/">Go games GO</a></li>
+    </ul>
 
 <div class="col-md-12">
-    
-    <h3>{{game_title}} REVIEWS</h3>
-    <hr>
+
+<h3>{{game_title}} --- REVIEWS</h3>
+<hr>
 </div>
 
-                <!--game word description-->
+            <!--game word description-->
 <div class="description col-md-3 col-sm-3 col-xs-12 rating-part-left text-center">
-     <h3>Name: {{game_title}}</h3>
-     <p>Realease year: {{publication_year}}</p>
-     <p>Genre: {{game_genre}}</p>
-     <p>Console type:{{console}}</p>
-     <p>Game Description:{{game_desc}}</p>
+    <h3>Name: {{game_title}}</h3>
+    <p>Realease year: {{publication_year}}</p>
+    <p>Genre: {{game_genre}}</p>
+    <p>Console type:{{console}}</p>
+    <p>Game Description:{{game_desc}}</p>
 </div>
 
 
@@ -35,191 +38,205 @@
 
 
 
-    <div class="col-md-12 col-sm-12 col-xs-12 review" >
-        <hr>
-        <h3 class="reviewtitle">Reviews</h3>
-        <hr>
-        <button class="addreview" onclick="openreviewform()">Add a Review</button>
+<div class="col-md-12 col-sm-12 col-xs-12 review" >
+    <hr>
+    <h3 class="reviewtitle">Reviews</h3>
+    <hr>
+    <button class="addreview" onclick="openreviewform()">Add a Review</button>
+</div>
+
+<div class="reviewform" id="reviewform">
+<form class="rating" method="post" action="/api/games/addreviews/{{id}}">
+    <h3>Rate the game:</h3>
+    <div class="rating">
+            <input type="radio" name="test" id="one" value="1" checked />
+            <label for="one"><i class="fa fa-star"></i></label>
+            <input type="radio" name="test" id="two" value="2" />
+            <label for="two"><i class="fa fa-star"></i></label>
+            <input type="radio" name="test" id="three" value="3"/>
+            <label for="three"><i class="fa fa-star"></i></label>
+            <input type="radio" name="test" id="four" value="4" />
+            <label for="four"><i class="fa fa-star"></i></label>
+            <input type="radio" name="test" id="five" value="5" />
+            <label for="five"><i class="fa fa-star"></i></label>
     </div>
+<br/>
+<h3> Comment:</h3>
+<textarea id="comment" name="comment" rows="6" cols="30"></textarea>
 
-    <div class="reviewform" id="reviewform">
-    <form class="rating" method="post" action="/api/games/addreviews/{{id}}">
-        <h3>Rate the game:</h3>
-        <div class="rating">
-                <input type="radio" name="test" id="one" value="1" checked />
-                <label for="one"><i class="fa fa-star"></i></label>
-                <input type="radio" name="test" id="two" value="2" />
-                <label for="two"><i class="fa fa-star"></i></label>
-                <input type="radio" name="test" id="three" value="3"/>
-                <label for="three"><i class="fa fa-star"></i></label>
-                <input type="radio" name="test" id="four" value="4" />
-                <label for="four"><i class="fa fa-star"></i></label>
-                <input type="radio" name="test" id="five" value="5" />
-                <label for="five"><i class="fa fa-star"></i></label>
-        </div>
-  <br/>
-  <h3> Comment:</h3>
-  <textarea id="comment" name="comment" rows="6" cols="30"></textarea>
-
-  <button type="submit" class="btn">Submit</button>
-  <button type="button" class="btn" onclick="closeReviewForm()"> Cancel</button>
+<button type="submit" class="btn">Submit</button>
+<button type="button" class="btn" onclick="closeReviewForm()"> Cancel</button>
 </form>
-        </div>
+    </div>
 
 {{#each reviews}}
-    <div class="col-md-12 col-sm-12 col-xs-12">
+<div class="col-md-12 col-sm-12 col-xs-12">
 
-            <div class="product-rating-panel-right">
-                    <div>
+        <div class="product-rating-panel-right">
+                <div>
 
-                        <!--review stars row-->
-                        {{#if (eq rating "1")}}  
-                          <i class="fa fa-star" aria-hidden="true"></i>
-                        <i class="fa fa-star-o" aria-hidden="true"></i>
-                        <i class="fa fa-star-o" aria-hidden="true"></i>
-                        <i class="fa fa-star-o" aria-hidden="true"></i>
-                        <i class="fa fa-star-o" aria-hidden="true"></i>
-  
+                    <!--review stars row-->
+                    {{#if (eq rating "1")}}  
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+
 {{/if}}
 
-    {
+{
 
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                        <i class="fa fa-star-o" aria-hidden="true"></i>
-                    </div>
-                    <div>
-                        <p>{{review_desc}}
-                        </p>
-                    </div>
-            </div>
-    </div>
-    {{/each}}
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                </div>
+                <div>
+                    <p>{{review_desc}}
+                    </p>
+                </div>
+        </div>
+</div>
+{{/each}}
 </div>
 
 <script>
-      function openreviewform() {
-          document.getElementById("reviewform").style.display = "block";
-        }
-        function closeReviewForm(){
-            document.getElementById("reviewform").style.display="none";
-        }
- 
-    </script>
+    function openreviewform() {
+        document.getElementById("reviewform").style.display = "block";
+    }
+    function closeReviewForm(){
+        document.getElementById("reviewform").style.display="none";
+    }
+
+</script>
 
 
-    <style>
-        *{
-    font-family: 'Courier New', Courier, monospace;
+<style>
+
+    *{
+font-family: 'Courier New', Courier, monospace;
 }
 body, html {
-    height: 100%;
-    margin: 0;
-  }
-  body{
-    background-color:white;
+height: 100%;
+margin: 0;
 }
-
+body{
+background-image: linear-gradient(to right, skyblue 0%, thistle 30%, skyblue 100%);
+height: 100%;
+margin: 0;
+}
+ul{
+    list-style-type: none;
+}
+.nav-main{
+font-size: 40px;
+margin-top: 10px;
+margin-left:0px;
+}
+a:link, a:visited, a:hover,a:active {
+color: white;
+text-decoration: none;
+}
 .rating-part-left h1{
-    font-size:30px;
-    margin:0px;
-    color: cadetblue;
+font-size:30px;
+margin:0px;
+color: rgb(72, 109, 110);
 }
 .rating-part-left i{
-    font-size:15px;
-    padding:2px;
-    color:orange;
+font-size:15px;
+padding:2px;
+color:orange;
 }
 
 .rating-part-right i,.product-rating-panel-right i{
-    font-size: 10px;
-    padding:6px 0px;
-    color:orange;
+font-size: 10px;
+padding:6px 0px;
+color:orange;
 }
 .rating-part-right span{
-    color:cadetblue;
-    font-size:10px;
-    padding-left: 5px;
+color:cadetblue;
+font-size:10px;
+padding-left: 5px;
 }
 .rating {
-    display: inline-block;
-    position: relative;
-    height: 50px;
-    line-height: 50px;
-    font-size: 50px;
-  }
-  .reviewform{
-    padding: 20px 10px;
-    display: none;
-    position:absolute;
-    bottom: 10px;
-    right: 50px;
-    border: 3px solid whitesmoke;
-    z-index: 9;
-    background-color: whitesmoke;
-  }
-  
- .row{
-    position: relative;
-    right: 10px;
+display: inline-block;
+position: relative;
+height: 50px;
+line-height: 50px;
+font-size: 50px;
+}
+.reviewform{
+padding: 20px 10px;
+display: none;
+position:absolute;
+bottom: 10px;
+right: 50px;
+border: 3px solid whitesmoke;
+z-index: 9;
+background-color: whitesmoke;
+}
 
- }
- .gamepic{
-     position: absolute;
-     right: 250px;
-     top: 80px;
-    
- }
- .description{
-     width: 800px;
-     line-height: 2.0;
- }
- .description h3{
-     color: cadetblue;
+.row{
+position: relative;
+right: 10px;
 
- }
- .reviewtitle {
-    margin: 0;
-    display: inline-block;
-  }
-  .addreview {
-    float: right;
-    margin-right: 80px;
-    margin-top: -60px;
-  }
-  .rating {
-	background: whitesmoke;
+}
+.gamepic{
+    position: absolute;
+    right: 250px;
+    top: 80px;
+
+}
+.description{
+    width: 800px;
+    line-height: 2.0;
+}
+.description h3{
+    color: cadetblue;
+
+}
+.reviewtitle {
+margin: 0;
+display: inline-block;
+}
+.addreview {
+float: right;
+margin-right: 80px;
+margin-top: -60px;
+}
+.rating {
+background: whitesmoke;
 }
 
 input[type="radio"] {
-	position: fixed;
-	top: 0;
-	right: 100%;
+position: fixed;
+top: 0;
+right: 100%;
 }
 
 label {
-	font-size: 50px;
-	padding: 1px;
-	margin: 0;
-	float: left;
-	cursor: pointer;
-	@include transition(0.2s);
+font-size: 50px;
+padding: 1px;
+margin: 0;
+float: left;
+cursor: pointer;
+@include transition(0.2s);
 }
 
 input[type="radio"]:checked ~ input + label {
-	background: none;
-	color: gray;
+background: none;
+color: gray;
 }
 
 input + label {
-	color: orange;
+color: orange;
 }
 
 
 
-    </style>
-    
+</style>
+
 </body>
 </html>
