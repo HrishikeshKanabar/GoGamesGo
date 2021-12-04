@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { response } = require("express");
+const { response, Router } = require("express");
 const {Reviews,Game } = require("../../models");
 const popup = require('node-popup');
 const { Op } = require("sequelize");
@@ -19,12 +19,11 @@ router.post("/search", (req, res) => {
          
         ]
       },
-      include: [Reviews],
       raw:true
     }).then((GameReviews) => {
       //res.json(GameReviews);
       //console.log(GameReviews);
-      return res.render('gamecard',{games:GameReviews});
+      return res.render('gamecards',{games:GameReviews});
     });
   });
 
@@ -44,4 +43,37 @@ router.post("/",(req, res)=>{
   });
 });
 
+
+router.get("/reviews/:id",(req, res)=>{
+   //console.log(req.params.id);
+   Game.findOne({
+    where: {
+      id:req.params.id,
+    },
+    include: [Reviews],
+    raw:true
+  }).then((rev) => {
+    //res.json(rev);
+    return res.render('gamecard',rev);
+  });
+});
+
+router.post("/addreviews/:id",(req,res)=>{
+  console.log(req.body);
+  Reviews.create({
+    review_desc:req.body.comment,
+    rating:req.body.test,
+    game_id:req.params.id
+  }).then((newReview) => {
+    //res.json(newReview);
+    res.redirect('/api/games/reviews/'+req.params.id);
+
+  });
+})
+
+
+
+
+
   module.exports = router;
+

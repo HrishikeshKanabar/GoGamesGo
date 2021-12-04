@@ -1,0 +1,196 @@
+   
+<!--
+<div class="container">
+<div class="row">
+    
+      {{#each games}}
+  <!--game word description
+<div class="card" style="width: 18rem; align-content: center;justify-content: center;margin:5px">
+  <div class="card-body">
+    <h5 class="card-title">{{game_title}}</h5>
+    <p class="card-text">Realease year: {{publication_year}}</p>
+    <p class="card-text">Genre: {{game_genre}}</p>
+    <p class="card-text">Console type: {{console}}</p>
+  </div>
+{{/each}}
+</div>
+</div>
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="icon" type="image/png" href="/../img/game-logo.jpg"/>
+<link rel="stylesheet" href="/../public/assets/css/reset.css">
+<link rel="stylesheet" href="/../public/assets/css/searchresultcss.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<title>Game Search</title>
+</head>
+<body>
+    <nav class="navigate" id="navigate">
+      
+        <ul class="nav-main">
+          <li class="active"><a href="/">Go games GO</a></li>
+        </ul>
+ 
+
+        <ul class="user">
+            <li s>User Admin</li>     
+          
+        </ul>
+        </nav>
+
+<div class="container">
+<div class="card">
+<table class="table">
+    <!--header-->
+    <tr>
+        <!--<th>Picture</th>-->
+        <th>Game Name</th>
+        <th>Release Year</th>
+        <th>Game Genre</th>
+        <th>Console type</th>
+      </tr>
+    <!--1-->
+     {{#each games}}
+        <tr>
+          <!--
+            <td style=" border-bottom: solid black;">
+                <div class="cover" >
+                    <img src="./sample.jpg" alt="sample img" />
+                </div>
+            </td>
+            -->
+            <td>
+                <div class="gamename" >
+                    <a href="/api/games/reviews/{{id}}">{{game_title}}</a>
+                </div>
+            </td>
+            <td>
+                <div class="year">
+                    <span>{{publication_year}}</span>
+                </td>
+            <td>
+                <div class="bg-genre">
+                    <span> {{game_genre}}</span>
+                </div>
+            </td>
+            <td>
+              <div class="console">
+                <span class="console">{{console}}</span>
+                </div>
+              </td>
+              {{/each}}
+        </tr>
+</table>
+</div>
+</div>
+</div>
+
+<style>
+      * {
+    font-family: 'Courier New', Courier, monospace;
+    }
+    ul{
+      list-style-type: none;
+    }
+    body{
+    background-image: linear-gradient(to right, skyblue 0%, thistle 30%, skyblue 100%);
+    height: 100%;
+    margin: 0;
+    }
+    .nav-main{
+    font-size: 40px;
+    margin-top: 10px;
+    margin-left:0;
+    }
+
+    a:link, a:visited, a:hover,a:active {
+    color: white;
+    text-decoration: none;
+    }
+
+    .user{
+    text-align: right;
+    line-height: 2.0;
+    margin-right: 20px;
+    margin-top: -40px;
+    padding: 15px 0;
+    font-size: 20px;
+    }
+
+
+    .table tr:first-child td {
+    border-bottom: solid black;
+    }
+
+    .table, .gamename a {
+    font-weight: 40px;
+    font-size: 20px;
+    color: black;
+    text-decoration: none;
+    line-height: 1.5;
+    }
+
+    .table, .gamename a:hover {
+    color: cadetblue;
+    text-decoration: none;
+    }
+
+    .table, .gamename{
+    min-width: 400px;
+    margin: 30px;
+    font-size: 20px;
+    color: cadetblue;
+    text-decoration: none;
+    }
+
+
+
+    span {
+    font-size:20px;
+    color: gray;
+    text-align: center;
+    }
+
+    .table{
+    width: 60px;
+    height: 40px;
+    color: #fd8b2c;
+    position: fixed;
+    margin-top: 30px;
+    margin-left: 80px;
+    }
+    .table th{
+    color: black;
+    border-bottom: solid gray;
+    }
+    .table td{
+    border-bottom: solid white;
+    }
+
+    .bg-genre{
+    background-color: darksalmon;
+    color: white;
+    min-width: 200px;
+    padding: 5px;
+    display: inline-flex;
+    white-space: nowrap;
+    border-radius: 15px;
+    margin-left: 5px;
+    text-align: center;
+    }
+    .year{
+    margin-left: 30px;
+    text-align: center;
+    }
+
+  </style>
+</body>
+
+</html>
+
+
+

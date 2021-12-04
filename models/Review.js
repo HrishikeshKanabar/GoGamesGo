@@ -13,7 +13,7 @@ Review.init(
         autoIncrement: true,
       },
       review_desc: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
         allowNull: false,
       },
       rating: {
