@@ -54,11 +54,23 @@ router.get("/reviews/:id",(req, res)=>{
     include: [Reviews],
     raw:true
   }).then((rev) => {
-    res.json(rev);
-    return res.render('gamecard',{Reviews:rev});
+    //res.json(rev);
+    return res.render('gamecard',rev);
   });
 });
 
+router.post("/addreviews/:id",(req,res)=>{
+  console.log(req.body);
+  Reviews.create({
+    review_desc:req.body.comment,
+    rating:req.body.test,
+    game_id:req.params.id
+  }).then((newReview) => {
+    //res.json(newReview);
+    res.redirect('/api/games/reviews/'+req.params.id);
+
+  });
+})
 
 
 
