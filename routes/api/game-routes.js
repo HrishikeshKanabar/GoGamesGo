@@ -45,14 +45,17 @@ router.post("/",(req, res)=>{
 });
 
 
-router.get("/api/reviews/:id",(req, res)=>{
-   console.log(req.params.id);
-   Reviews.findOne({
+router.get("/reviews/:id",(req, res)=>{
+   //console.log(req.params.id);
+   Game.findOne({
     where: {
-      game_id:req.params.id,
+      id:req.params.id,
     },
+    include: [Reviews],
+    raw:true
   }).then((rev) => {
     res.json(rev);
+    return res.render('gamecard',{Reviews:rev});
   });
 });
 
