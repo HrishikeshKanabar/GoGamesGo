@@ -19,7 +19,6 @@ router.post("/search", (req, res) => {
          
         ]
       },
-      include: [Reviews],
       raw:true
     }).then((GameReviews) => {
       //res.json(GameReviews);
