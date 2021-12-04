@@ -8,12 +8,9 @@ Hrishikesh Kanabar
 
 A. Fairfax Lovelace
 
-
-
-
 # View Demo (Video Demo)
 
- [Click here to see demo]()
+ [Click here to see demo](https://drive.google.com/file/d/1L9ps_pAuUhB73Kb366pp2_D-hzGKNfWN/view?usp=sharing)
 
 # Live Link of Web application 
 
@@ -36,11 +33,11 @@ https://desolate-hollows-73074.herokuapp.com/
 
 Schema Diagram      
 :--------------------------------:|
-![App Start]()  
+![App Start](https://github.com/HrishikeshKanabar/GoGamesGo/blob/main/public/assets/Capture.JPG)  
 
  Landing page       
 :--------------------------------:|
-![Landing page]()      
+![Landing page](https://github.com/HrishikeshKanabar/GoGamesGo/blob/main/public/assets/Landing.JPG)      
 
 
 ## Requirement achieved 
@@ -61,7 +58,7 @@ Collaboration 10%
 
 ## Downloads and running code locally
 
-Step-1 git clone https://github.com/HrishikeshKanabar/E-Commerce-Api.git
+Step-1 git clone https://github.com/HrishikeshKanabar/GoGamesGo
 
 Step-2 open folder in VS Code.
 
